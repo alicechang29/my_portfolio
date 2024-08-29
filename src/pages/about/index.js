@@ -6,11 +6,17 @@ import {
   dataabout,
   meta,
   worktimeline,
+  languages,
   skills,
-  services,
+  education,
 } from "../../content_option";
 
 export const About = () => {
+  const formattedAboutMe = dataabout.aboutme
+    .split('\n')
+    .map((text, index) => (text.trim()
+      ? <p key={index}>{text}</p>
+      : <br key={index} />));
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -31,13 +37,13 @@ export const About = () => {
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div>
-              <p>{dataabout.aboutme}</p>
+              <p>{formattedAboutMe}</p>
             </div>
           </Col>
         </Row>
         <Row className=" sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Work Timline</h3>
+            <h3 className="color_sec py-4">Experiences</h3>
           </Col>
           <Col lg="7">
             <table className="table caption-top">
@@ -57,34 +63,46 @@ export const About = () => {
         </Row>
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Skills</h3>
+            <h3 className="color_sec py-4">Languages</h3>
           </Col>
           <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
-                  <h3 className="progress-title">{data.name}</h3>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
+            <Row>
+              {languages.map((data, i) => {
+                return (
+                  <Col lg="4" md="6" sm="12" key={i}> {/* Adjust the sizes as needed */}
+                    <div key={i}>
+                      <h3 className="progress-title">{data.name}</h3>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+                  </Col>
+                );
+              })}
+            </Row>
+          </Col>
+        </Row>
+        <Row className="sec_sp">
+          <Col lg="5">
+            <h3 className="color_sec py-4">Libraries & Frameworks</h3>
+          </Col>
+          <Col lg="7">
+            <Row>
+              {skills.map((data, i) => {
+                return (
+                  <Col lg="4" md="6" sm="12" key={i}> {/* Adjust the sizes as needed */}
+                    <div key={i}>
+                      <h3 className="progress-title">{data.name}</h3>
+                    </div>
+                  </Col>
+                );
+              })}
+            </Row>
           </Col>
         </Row>
         <Row className="sec_sp">
           <Col lang="5">
-            <h3 className="color_sec py-4">services</h3>
+            <h3 className="color_sec py-4">Education</h3>
           </Col>
           <Col lg="7">
-            {services.map((data, i) => {
+            {education.map((data, i) => {
               return (
                 <div className="service_ py-4" key={i}>
                   <h5 className="service__title">{data.title}</h5>

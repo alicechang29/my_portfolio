@@ -1,67 +1,52 @@
-import React, { useState } from "react";
-import * as emailjs from "emailjs-com";
+
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
 
+
+
 export const ContactUs = () => {
-  const [formData, setFormdata] = useState({
-    email: "",
-    name: "",
-    message: "",
-    loading: false,
-    show: false,
-    alertmessage: "",
-    variant: "",
-  });
+  const form = useRef();
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setShowSuccess(false);
+    setShowError(false);
 
-    const templateParams = {
-      from_name: formData.email,
-      user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
-      message: formData.message,
-    };
+    const formData = new FormData(form.current);
+    const userName = formData.get('user_name').trim();
+    const userEmail = formData.get('user_email').trim();
+    const message = formData.get('message').trim();
+
+    if (!userName || !userEmail || !message) {
+      setShowError(true);
+      setShowSuccess(false);
+      return;
+    }
 
     emailjs
-      .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
-      )
+      .sendForm(contactConfig.serviceId, contactConfig.templateId, form.current, {
+        publicKey: contactConfig.publicKey,
+      })
       .then(
-        (result) => {
-          console.log(result.text);
-          setFormdata({
-            loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your messege",
-            variant: "success",
-            show: true,
-          });
+        () => {
+          console.log('SUCCESS!');
+          setShowSuccess(true);
+          setShowError(false);
+          form.current.reset();
         },
         (error) => {
-          console.log(error.text);
-          setFormdata({
-            alertmessage: `Faild to send!,${error.text}`,
-            variant: "danger",
-            show: true,
-          });
-          document.getElementsByClassName("co_alert")[0].scrollIntoView();
-        }
+          setShowError(true);
+          setShowSuccess(false);
+          console.log('FAILED...', error.text);
+        },
       );
-  };
-
-  const handleChange = (e) => {
-    setFormdata({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -80,88 +65,37 @@ export const ContactUs = () => {
         </Row>
         <Row className="sec_sp">
           <Col lg="12">
-            <Alert
-              //show={formData.show}
-              variant={formData.variant}
-              className={`rounded-0 co_alert ${
-                formData.show ? "d-block" : "d-none"
-              }`}
-              onClose={() => setFormdata({ show: false })}
-              dismissible
-            >
-              <p className="my-0">{formData.alertmessage}</p>
-            </Alert>
-          </Col>
-          <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
-              <br />
-              <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Phone:</strong> {contactConfig.YOUR_FONE}
-                </p>
-              ) : (
-                ""
-              )}
-            </address>
-            <p>{contactConfig.description}</p>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center">
-            <form onSubmit={handleSubmit} className="contact__form w-100">
-              <Row>
-                <Col lg="6" className="form-group">
-                  <input
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name || ""}
-                    type="text"
-                    required
-                    onChange={handleChange}
-                  />
-                </Col>
-                <Col lg="6" className="form-group">
-                  <input
-                    className="form-control rounded-0"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                    value={formData.email || ""}
-                    required
-                    onChange={handleChange}
-                  />
+            {showSuccess && <Alert variant="success">Your message has been sent successfully!</Alert>}
+            {showError && <Alert variant="danger">Failed to send your message. Please ensure form values are filled in.</Alert>}
+            <form ref={form} onSubmit={sendEmail}>
+              <Row className="mb-3">
+                <Col>
+                  <label>Name</label>
+                  <input type="text" name="user_name" className="form-control" />
                 </Col>
               </Row>
-              <textarea
-                className="form-control rounded-0"
-                id="message"
-                name="message"
-                placeholder="Message"
-                rows="5"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-              <br />
-              <Row>
-                <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" type="submit">
-                    {formData.loading ? "Sending..." : "Send"}
-                  </button>
+              <Row className="mb-3">
+                <Col>
+                  <label>Email</label>
+                  <input type="email" name="user_email" className="form-control" />
+                </Col>
+              </Row>
+              <Row className="mb-3">
+                <Col>
+                  <label>Message</label>
+                  <textarea name="message" className="form-control" />
+                </Col>
+              </Row>
+              <Row className="mb-3">
+                <Col>
+                  <input type="submit" value="Send" className="btn btn-primary" />
                 </Col>
               </Row>
             </form>
           </Col>
         </Row>
       </Container>
-      <div className={formData.loading ? "loading-bar" : "d-none"}></div>
     </HelmetProvider>
   );
+
 };

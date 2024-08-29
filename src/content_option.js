@@ -1,166 +1,165 @@
-const logotext = "JOHN";
+const logotext = "ALICE";
 const meta = {
-    title: "John Doe",
-    description: "I’m John Doe data scientist _ Full stack devloper,currently working in Berlin",
+    title: "Alice Chang",
+    description: "I’m a software engineer in Seattle, WA",
 };
 
 const introdata = {
-    title: "I’m John Doe",
+    title: "I’m Alice Chang",
     animated: {
-        first: "I love coding",
-        second: "I code cool websites",
-        third: "I develop mobile apps",
+        first: "I turn ideas into software",
+        second: "I bridge business with tech",
+        third: "I craft seamless user experiences",
     },
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+    description: "Software Engineer in Seattle, WA",
+    your_img_url: require("./assets/images/me.jpg"),
 };
 
 const dataabout = {
-    title: "abit about my self",
-    aboutme: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+    title: "Hello!",
+    aboutme: `Thanks for visiting my website! I'm Alice and I'm based in Seattle, WA. \n I've been in the tech industry for almost a decade, making my way from technical project manager to product management, and now I am a Software Engineer. I've always been passionate about how building software products, mastering both the business and technical aspects to bring ideas to life. \n In my spare time, I enjoy the outdoors, whether it be bike-packing through Olympic National Park, trekking across Patagonia in Chile, or playing tennis locally!`,
 };
 const worktimeline = [{
-        jobtitle: "Designer of week",
-        where: "YAdfi",
-        date: "2020",
+    jobtitle: "Software Engineer Intern",
+    where: "Dabima",
+    date: "July 2024 - Present",
+},
+{
+    jobtitle: "Software Engineer Intern",
+    where: "Rithm School",
+    date: "June 2024 - July 2024",
+},
+{
+    jobtitle: "Product Manager",
+    where: "Whip Media Group",
+    date: "May 2019 - July 2023",
+},
+{
+    jobtitle: "Technical Project Manager",
+    where: "Whip Media Group",
+    date: "Aug 2017 - May 2019",
+},
+{
+    jobtitle: "Product Manager",
+    where: "Digital Social Retail",
+    date: "June 2016 - Aug 2017",
+},
+];
+
+const languages = [
+    {
+        name: "Javascript"
     },
     {
-        jobtitle: "Designer of week",
-        where: "Jamalya",
-        date: "2019",
+        name: "Python"
     },
     {
-        jobtitle: "Designer of week",
-        where: "ALquds",
-        date: "2019",
+        name: "Typescript"
+    },
+    {
+        name: "SQL"
+    },
+    {
+        name: "GraphQL"
+    },
+    {
+        name: "HTML/CSS"
     },
 ];
 
-const skills = [{
-        name: "Python",
-        value: 90,
+const skills = [
+    {
+        name: "React"
     },
     {
-        name: "Djano",
-        value: 85,
+        name: "PostgreSQL"
     },
     {
-        name: "Javascript",
-        value: 80,
+        name: "Node.JS"
     },
     {
-        name: "React",
-        value: 60,
+        name: "Express"
     },
     {
-        name: "Jquery",
-        value: 85,
+        name: "Flask"
+    },
+    {
+        name: "Django"
     },
 ];
 
-const services = [{
-        title: "UI & UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Mobile Apps",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Wordpress Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
+const education = [{
+    title: "Rithm School",
+    description: "Full Stack Web Development",
+},
+{
+    title: "Binghamton University, State University of New York",
+    description: "B.S Economics, with specialization in Financial Anlaysis & Minor in Health and Wellness",
+},
+{
+    title: "New York University",
+    description: "Agile Project Management Certification",
+},
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+const dataportfolio = [
+    {
+        img: require("./assets/images/warbler.png"),
+        title: "Warbler",
+        description: "Social network modeled after Twitter",
+        tech: "Python, Flask, Jinja, SQLAlchemy, PostgreSQL",
+        link: "https://github.com/alicechang29/flask-warbler",
     },
     {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+        img: require("./assets/images/sharebnb.png"),
+        title: "ShareBnB",
+        description: "Rental listings platform modeled after Airbnb",
+        tech: "Python, Flask, PostgreSQL, React, Tailwind, AWS S3 ",
+        link: "https://github.com/alicechang29/sharebnb",
     },
     {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+        img: require("./assets/images/jobly.png"),
+        title: "Jobly",
+        description: "Job listings platform modeled after Linkedin",
+        tech: "Node.js, Express, PostgreSQL, React",
+        link: "https://github.com/alicechang29/jobly-react",
     },
     {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+        img: require("./assets/images/react-cafe.png"),
+        title: "Alice's Cafe",
+        description: "A cafe menu app",
+        tech: "Javascript, React, JSON-Server",
+        link: "https://github.com/alicechang29/react-cafe",
     },
     {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+        img: require("./assets/images/memory.png"),
+        title: "Memory Game",
+        description: "A silly, time wasting, memory game",
+        tech: "HTML, CSS",
+        link: "https://alicechang29.github.io/memoryGame/",
     },
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "name@domain.com",
-    YOUR_FONE: "(555)123-4567",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
+    serviceId: "service_cwvep3q",
+    templateId: "template_sgnhvbh",
+    publicKey: "3vleCku10Np-Ar0SV",
 };
 
-const socialprofils = {
-    github: "https://github.com",
-    facebook: "https://facebook.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+const socialprofiles = {
+    github: "https://github.com/alicechang29",
+    linkedin: "https://www.linkedin.com/in/achang9",
 };
 export {
     meta,
     dataabout,
     dataportfolio,
     worktimeline,
+    languages,
     skills,
-    services,
+    education,
     introdata,
     contactConfig,
-    socialprofils,
+    socialprofiles as socialprofils,
     logotext,
 };
