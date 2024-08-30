@@ -16,7 +16,7 @@ const introdata = {
 
 const dataabout = {
     title: "Hello!",
-    aboutme: `Thanks for visiting my website! I'm Alice and I'm based in Seattle, WA. \n I've been in the tech industry for almost a decade, making my way from technical project manager to product management, and now I am a Software Engineer. I've always been passionate about how building software products, mastering both the business and technical aspects to bring ideas to life. \n In my spare time, I enjoy the outdoors, whether it be bike-packing through Olympic National Park, trekking across Patagonia in Chile, or playing tennis locally!`,
+    aboutme: `Thanks for visiting my website! I'm Alice, and I'm based in Seattle, WA. \n I've been in the tech industry for almost a decade, making my way from technical project manager to product management, and now I am a Software Engineer. I've always been passionate about building software products, mastering both the business and technical aspects to bring ideas to life. \n In my spare time, I enjoy the outdoors- bike-packing through Olympic National Park, trekking across Patagonia in Chile, or playing tennis locally!`,
 };
 const worktimeline = [{
     jobtitle: "Software Engineer Intern",
@@ -59,9 +59,6 @@ const languages = [
         name: "SQL"
     },
     {
-        name: "GraphQL"
-    },
-    {
         name: "HTML/CSS"
     },
 ];
@@ -84,6 +81,9 @@ const skills = [
     },
     {
         name: "Django"
+    },
+    {
+        name: "GraphQL"
     },
 ];
 

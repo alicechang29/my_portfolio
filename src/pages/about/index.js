@@ -81,7 +81,7 @@ export const About = () => {
         </Row>
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Libraries & Frameworks</h3>
+            <h3 className="color_sec py-4">Technologies</h3>
           </Col>
           <Col lg="7">
             <Row>
