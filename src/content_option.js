@@ -7,11 +7,10 @@ const meta = {
 const introdata = {
     title: "I’m Alice Chang",
     animated: {
-        first: "I turn ideas into software",
-        second: "I bridge business with tech",
-        third: "I craft seamless user experiences",
+        first: "A Software Engineer in Seattle, WA.",
+        second: "I turn ideas into software.",
+        third: "Let's work together.",
     },
-    description: "Software Engineer in Seattle, WA",
     your_img_url: require("./assets/images/me.jpg"),
 };
 
