@@ -7,7 +7,7 @@ const meta = {
 const introdata = {
     title: "I’m Alice Chang",
     animated: {
-        first: "A Software Engineer in Seattle, WA.",
+        first: "A Software Engineer in Seattle.",
         second: "I turn ideas into software.",
         third: "Let's work together.",
     },
