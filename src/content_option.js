@@ -8,7 +8,7 @@ const introdata = {
     title: "I’m Alice Chang",
     animated: {
         first: "A Software Engineer in Seattle.",
-        second: "I turn ideas into software.",
+        second: "I turn ideas into code.",
         third: "Let's work together.",
     },
     your_img_url: require("./assets/images/me.jpg"),
