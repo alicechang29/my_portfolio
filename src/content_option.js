@@ -15,8 +15,8 @@ const introdata = {
 };
 
 const dataabout = {
-    title: "Hello!",
-    aboutme: `Thanks for visiting my website! I'm Alice, and I'm based in Seattle, WA. \n I've been in the tech industry for almost a decade, making my way from technical project manager to product management, and now I am a Software Engineer. I've always been passionate about building software products, mastering both the business and technical aspects to bring ideas to life. \n In my spare time, I enjoy the outdoors- bike-packing through Olympic National Park, trekking across Patagonia in Chile, or playing tennis locally!`,
+    title: "From Product Manager to Software Engineer",
+    aboutme: `I am a software engineer with a passion for bringing ideas to life. \n Prior to attending Rithm School’s full stack web development program, I worked as a Product Manager and Technical Project Manager, where I solidified my communication and writing skills, problem-solving abilities, and diligent work integrity. Over time, I found myself getting curious about how software was built “on the inside”, and I began coding. \n I found myself wanting to code full-time and engaging in conversations with friends and family over different technologies, what to learn, and how to build apps. As a result, I decided to make a career pivot into software development, where I can create products that delight and increase potential for end users. \n My goal is to ultimately blend my experience working as a product manager with my knowledge of software development to help  bridge the gaps between business and technical teams in order to build relevant, scalable, and impactful products.`,
 };
 const worktimeline = [{
     jobtitle: "Software Engineer Intern",
