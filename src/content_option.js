@@ -11,7 +11,7 @@ const introdata = {
         second: "I turn ideas into code.",
         third: "Let's work together.",
     },
-    your_img_url: require("./assets/images/me.jpg"),
+    your_img_url: require("./assets/images/IMG_3923.png"),
 };
 
 const dataabout = {
